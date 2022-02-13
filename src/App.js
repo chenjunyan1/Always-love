@@ -1,5 +1,6 @@
-import Main from './Component/Main';
-import Align from './Component/Album';
+import Course from './Component/Course'
+import Album from './Component/Album';
+import Diary from './Component/Diary';
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -14,9 +15,6 @@ import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 
-import TabContext from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
 
 // 滚动条，一键置顶
 function ScrollTop(props) {
@@ -66,17 +64,48 @@ ScrollTop.propTypes = {
 };
 
 
+// 滑动卡片
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box sx={{ p: 3 }}>
+          {children}
+        </Box>
+      )}
+    </div>
+  );
+}
+
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
+};
+
+function a11yProps(index) {
+  return {
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
+  };
+}
 
 
 
 export default function App(props) {
-
-  const [value, setValue] = React.useState('1');
+  const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
 
   return (
 
@@ -85,25 +114,29 @@ export default function App(props) {
       <AppBar>
         <Toolbar>
           <Typography variant="h6" component="div">
-            C L
+            C L - Always Love
           </Typography>
         </Toolbar>
       </AppBar>
       <Toolbar id="back-to-top-anchor" />
 
-      <Box sx={{ width: '100%', typography: 'body1' }}>
-        <TabContext value={value}>
-          <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-            <TabList onChange={handleChange} aria-label="lab API tabs example">
-              <Tab label="Item One" value="1" />
-              <Tab label="Item Two" value="2" />
-              <Tab label="Item Three" value="3" />
-            </TabList>
-          </Box>
-          <TabPanel value="1">Item One</TabPanel>
-          <TabPanel value="2">Item Two</TabPanel>
-          <TabPanel value="3">Item Three</TabPanel>
-        </TabContext>
+      <Box sx={{ width: '100%' }}>
+        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+          <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+            <Tab label="日记" {...a11yProps(0)} />
+            <Tab label="相册" {...a11yProps(1)} />
+            <Tab label="时光" {...a11yProps(2)} />
+          </Tabs>
+        </Box>
+        <TabPanel value={value} index={0}>
+          <Diary />
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <Album />
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          <Course />
+        </TabPanel>
       </Box>
 
       {/* 一键置顶 */}
