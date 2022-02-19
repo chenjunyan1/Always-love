@@ -61,7 +61,6 @@ function main() {
             <Course />
             <Course />
             <Course />
-
         </Timeline>
     );
 }
