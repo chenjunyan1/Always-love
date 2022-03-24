@@ -4,29 +4,31 @@ import Box from '@mui/material/Box';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
-import UseMediaQuery from '@mui/material/useMediaQuery';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { createTheme, ThemeProvider, useTheme } from '@mui/material/styles';
 
-function album() {
-    const matches = UseMediaQuery('(min-width:600px)');
+function Album() {
+    const theme = useTheme();
+    const matches = useMediaQuery(theme.breakpoints.up(500));
 
     return (
-        <div>
-            <Box sx={{ width: 300, height: 450, overflowY: 'scroll' }}>
-                <ImageList variant="masonry" cols={(`${matches}`) ? 2 : 3} gap={8}>
-                    {itemData.map((item) => (
-                        <ImageListItem key={item.img}>
-                            <img
-                                src={`${item.img}?w=248&fit=crop&auto=format`}
-                                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                                alt={item.title}
-                                loading="lazy"
-                            />
-                            <ImageListItemBar position="below" title={item.author} />
-                        </ImageListItem>
-                    ))}
-                </ImageList>
-            </Box>
-        </div>
+        <div theme={theme}>
+            <Box sx={{ width: matches ? 1000 : 300, height: 450, overflowY: 'scroll' }}>
+            <ImageList variant="masonry" cols={matches ? 3 : 2} gap={8}>
+                {itemData.map((item) => (
+                    <ImageListItem key={item.img}>
+                        <img
+                            src={`${item.img}?w=248&fit=crop&auto=format`}
+                            srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                            alt={item.title}
+                            loading="lazy"
+                        />
+                        <ImageListItemBar position="below" title={item.author} />
+                    </ImageListItem>
+                ))}
+            </ImageList>
+        </Box>
+        </div >
     )
 }
 
@@ -94,4 +96,4 @@ const itemData = [
     },
 ];
 
-export default album;
+export default Album;
