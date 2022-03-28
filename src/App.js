@@ -89,7 +89,7 @@ export default function App(props) {
         <TabContext value={value}>
           <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
             <TabList onChange={handleChange} aria-label="lab API tabs example">
-              <Tab label="日记" value="1" />
+              <Tab label="小记" value="1" />
               <Tab label="相册" value="2" />
               <Tab label="时光" value="3" />
             </TabList>

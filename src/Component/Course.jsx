@@ -42,7 +42,7 @@ function Course() {
 }
 
 
-function main() {
+function Main() {
     return (
         <Timeline position="alternate">
             <Course />
@@ -66,4 +66,4 @@ function main() {
 }
 
 
-export default main;
+export default Main;
