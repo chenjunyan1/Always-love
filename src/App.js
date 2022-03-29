@@ -79,7 +79,7 @@ export default function App(props) {
       <AppBar>
         <Toolbar>
           <Typography variant="h6" component="div">
-            C L - 
+            C L - Always-Love
           </Typography>
         </Toolbar>
       </AppBar>
