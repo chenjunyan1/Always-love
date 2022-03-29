@@ -41,7 +41,7 @@ function Albums({ xiangCe }) {
                     {xiangCe.title}
                 </Button>
             </Stack>
-            <Box sx={{ width: matches ? 1000 : 300, height: 450, overflowY: 'scroll' }}>
+            <Box sx={{ width: matches ? 1000 : 300, height: matches ? 450 : 200, overflowY: 'scroll' }}>
                 <ImageList variant="masonry" cols={matches ? 3 : 2} gap={8}>
                     {xiangCe.gallery.map((item, index) => (
                         <ImageListItem key={index}>
