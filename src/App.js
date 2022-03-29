@@ -16,6 +16,7 @@ import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
+import LoyaltyOutlinedIcon from '@mui/icons-material/LoyaltyOutlined';
 // 滚动条，一键置顶
 function ScrollTop(props) {
   const { children, window } = props;
@@ -79,7 +80,8 @@ export default function App(props) {
       <AppBar>
         <Toolbar>
           <Typography variant="h6" component="div">
-            C L - Always-Love
+            CL - Always-Love
+            <LoyaltyOutlinedIcon />
           </Typography>
         </Toolbar>
       </AppBar>
@@ -99,10 +101,10 @@ export default function App(props) {
           </TabPanel>
           <TabPanel value="2">
             <Album />
-            </TabPanel>
+          </TabPanel>
           <TabPanel value="3">
             <Course />
-            </TabPanel>
+          </TabPanel>
         </TabContext>
       </Box>
       {/* 一键置顶 */}

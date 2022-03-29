@@ -25,7 +25,6 @@ const div1 = {
 }
 
 function Albums({ xiangCe }) {
-
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.up(500));
 

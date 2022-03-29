@@ -9,6 +9,8 @@ import { experimentalStyled as styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { createTheme, ThemeProvider, useTheme } from '@mui/material/styles';
 // 本地json
 import Date from '../data.json'
 
@@ -22,17 +24,20 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 function Cards({ title, content, img }) {
+    const theme = useTheme();
+    const matches = useMediaQuery(theme.breakpoints.up(500));
+
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card theme={theme} sx={{ maxWidth: 345 }}>
             <CardActionArea>
                 <CardMedia
                     component="img"
-                    height="180"
+                    height={matches ? "180" : "100"}
                     image={img}
                     alt="green iguana"
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
+                    <Typography gutterBottom variant={matches ? "h5" : "h6"} component="div">
                         {title}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
@@ -45,8 +50,9 @@ function Cards({ title, content, img }) {
 }
 
 function Diary() {
+
     return (
-        <div>
+        <div >
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                     {Date.xiaoJi.map((item, index) => (
