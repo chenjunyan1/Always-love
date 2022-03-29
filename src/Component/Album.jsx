@@ -46,8 +46,8 @@ function Albums({ xiangCe }) {
                     {xiangCe.gallery.map((item, index) => (
                         <ImageListItem key={index}>
                             <img
-                                src={`${item.img}?w=248&fit=crop&auto=format`}
-                                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                                src={item.img}
+                                srcSet={item.img}
                                 alt={item.title}
                                 loading="lazy"
                             />
