@@ -24,13 +24,17 @@ const div1 = {
     marginBottom: "100px"
 }
 
+const div2 = {
+    marginBottom: "10px"
+}
+
 function Albums({ xiangCe }) {
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.up(500));
 
     return (
         <div theme={theme} style={div1}>
-            <Stack spacing={2} direction="row">
+            <Stack spacing={2} direction="row" style={div2}>
                 <Button
                     variant="contained"
                     fullWidth={true}
