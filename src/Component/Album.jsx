@@ -27,7 +27,9 @@ const div1 = {
 const div2 = {
     marginBottom: "10px"
 }
-
+const div3 = {
+    borderRadius: "10px"
+}
 function Albums({ xiangCe }) {
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.up(500));
@@ -53,6 +55,7 @@ function Albums({ xiangCe }) {
                                 srcSet={item.img}
                                 alt={item.title}
                                 loading="lazy"
+                                style={div3}
                             />
                             <ImageListItemBar position="below" title={item.title} />
                         </ImageListItem>

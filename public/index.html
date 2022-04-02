@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-      <link rel="shortcut icon" href="./logo.svg" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="./logo.svg" />
 
-    <!--
+<head>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href="./logo.svg" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="./logo.svg" />
+
+  <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -25,12 +23,15 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>我 们 的 家</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
+  <title>我 们 的 家</title>
+</head>
+
+<body leftmargin=0 topmargin=0 oncontextmenu='return false' ondragstart='return false' onselectstart='return false'
+  onselect='document.selection.empty()' oncopy='document.selection.empty()' onbeforecopy='return false'
+  onmouseup='document.selection.empty()'>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -40,5 +41,41 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
+</body>
+
 </html>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script type="text/javascript">
+  /* 鼠标特效 */
+  var a_idx = 0;
+  jQuery(document).ready(function ($) {
+    $("body").click(function (e) {
+      var a = new Array("❤莫莫哒❤", "❤李小娟❤", "❤陈俊雁❤", "❤遇见❤", "❤仙境❤");
+      var $i = $("<span></span>").text(a[a_idx]);
+      a_idx = (a_idx + 1) % a.length;
+      var x = e.pageX,
+        y = e.pageY;
+      $i.css({
+        "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+        "top": y - 20,
+        "left": x,
+        "position": "absolute",
+        "font-weight": "bold",
+        "color": "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+      });
+      $("body").append($i);
+      $i.animate({
+        "top": y - 180,
+        "opacity": 0
+      },
+        1500,
+        function () {
+          $i.remove();
+        });
+    });
+  });
+
+
+
+</script>

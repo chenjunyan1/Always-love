@@ -81,51 +81,59 @@
             "gallery": [
                 {
                     "img": "Img/xiangce/祠堂拍摄/ciTang (1).jpg",
-                    "title": "爬祠堂的一颗大古树"
+                    "title": "来，茄子"
                 },
                 {
                     "img": "Img/xiangce/祠堂拍摄/ciTang (2).JPG",
-                    "title": "爬祠堂的一颗大古树"
+                    "title": "看，拍摄还得是我"
                 },
                 {
                     "img": "Img/xiangce/祠堂拍摄/ciTang (3).JPG",
-                    "title": "爬祠堂的一颗大古树"
+                    "title": "还得是我来拉你"
                 },
                 {
                     "img": "Img/xiangce/祠堂拍摄/ciTang (4).JPG",
-                    "title": "爬祠堂的一颗大古树"
+                    "title": "丢树上，走了走了"
                 },
                 {
                     "img": "Img/xiangce/祠堂拍摄/ciTang (5).JPG",
-                    "title": "爬祠堂的一颗大古树"
+                    "title": "哇哦，真美 卡~"
                 },
                 {
                     "img": "Img/xiangce/祠堂拍摄/ciTang (6).JPG",
-                    "title": "爬祠堂的一颗大古树"
+                    "title": "童：你们愁啥呀？"
                 },
                 {
                     "img": "Img/xiangce/祠堂拍摄/ciTang (7).jpg",
-                    "title": "爬祠堂的一颗大古树"
+                    "title": "哇哦！是猪蹄"
                 },
                 {
                     "img": "Img/xiangce/祠堂拍摄/ciTang (8).jpg",
-                    "title": "爬祠堂的一颗大古树"
+                    "title": "三人行必有我师"
                 }
             ]
         }
     ],
     "shiGuang": [
         {
-            "img": "",
-            "time": "",
-            "title": "",
-            "content": ""
+            "time": "2021.9.13",
+            "title": "遇见",
+            "content": "2021_KIDO秋季开学，我们遇见"
         },
         {
-            "img": "",
-            "time": "",
-            "title": "",
-            "content": ""
+            "time": "2021.9.13",
+            "title": "遇见",
+            "content": "2021_KIDO秋季开学，我们遇见"
+        },
+        {
+            "time": "2021.9.13",
+            "title": "遇见",
+            "content": "2021_KIDO秋季开学，我们遇见"
+        },
+        {
+            "time": "2021.9.13",
+            "title": "遇见",
+            "content": "2021_KIDO秋季开学，我们遇见"
         }
     ]
 }

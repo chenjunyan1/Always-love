@@ -12,8 +12,10 @@ import LaptopMacIcon from '@mui/icons-material/LaptopMac';
 import HotelIcon from '@mui/icons-material/Hotel';
 import RepeatIcon from '@mui/icons-material/Repeat';
 import Typography from '@mui/material/Typography';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import Date from '../data.json'
 
-function Course() {
+function Course({ time, title, content }) {
     return (
         <TimelineItem>
             <TimelineOppositeContent
@@ -22,45 +24,45 @@ function Course() {
                 variant="body2"
                 color="text.secondary"
             >
-                2021.09.15
+                {time}
+                {/* 2021.09.15 */}
             </TimelineOppositeContent>
             <TimelineSeparator>
                 <TimelineConnector />
                 <TimelineDot>
-                    <FastfoodIcon />
+                    {/* <FastfoodIcon /> */}
+                    <FavoriteIcon color="error"/>
                 </TimelineDot>
                 <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent sx={{ py: '12px', px: 2 }}>
                 <Typography variant="h6" component="span">
-                    Eat
+                    {title}
+                    {/* Eat */}
                 </Typography>
-                <Typography>Because you need strength</Typography>
+                <Typography>
+                    {content}
+                    {/* Because you need strength */}
+                </Typography>
             </TimelineContent>
         </TimelineItem>
     )
 }
 
+// {
+//     "time": "",
+//     "title": "",
+//     "content": ""
+// }
 
 function Main() {
     return (
         <Timeline position="alternate">
-            <Course />
-            <Course />
-            <Course />
-            <Course />
-            <Course />
-            <Course />
-            <Course />
-            <Course />
-            <Course />
-            <Course />
-            <Course />
-            <Course />
-            <Course />
-            <Course />
-            <Course />
-            <Course />
+            <Course
+                time={Date.shiGuang[0].time}
+                title={Date.shiGuang[0].title}
+                content={Date.shiGuang[0].content}
+            />
         </Timeline>
     );
 }
