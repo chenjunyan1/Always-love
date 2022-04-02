@@ -2,6 +2,7 @@ import Course from './Component/Course'
 import Album from './Component/Album';
 import Diary from './Component/Diary';
 import * as React from 'react';
+import { Component, useEffect } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -67,6 +68,14 @@ ScrollTop.propTypes = {
 
 
 export default function App(props) {
+
+  useEffect(() => {
+    Diary();
+    Album();
+    Course();
+    console.log("加载完成");
+  }, []);
+
   const [value, setValue] = React.useState("1");
 
   const handleChange = (event, newValue) => {

@@ -13,7 +13,9 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { createTheme, ThemeProvider, useTheme } from '@mui/material/styles';
 // 本地json
 import Date from '../data.json'
-
+const div1 = {
+    boxShadow: "0 0 0.5em 0 #1d1515"
+}
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
     ...theme.typography.body2,
@@ -27,7 +29,7 @@ function Cards({ title, content, img }) {
     const matches = useMediaQuery(theme.breakpoints.up(500));
 
     return (
-        <Card theme={theme} sx={{ maxWidth: 345 }}>
+        <Card theme={theme} sx={{ maxWidth: 345 }} style={div1}>
             <CardActionArea>
                 <CardMedia
                     component="img"
@@ -52,6 +54,7 @@ function Diary() {
 
     return (
         <div >
+            {console.log("小记")}
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                     {Date.xiaoJi.map((item, index) => (

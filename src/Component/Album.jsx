@@ -21,14 +21,18 @@ import Date from '../data.json'
 
 // CSS
 const div1 = {
-    marginBottom: "100px"
+    marginBottom: "100px",
+    padding:"5px",
+    borderRadius: "10px"
 }
 
 const div2 = {
     marginBottom: "10px"
 }
 const div3 = {
-    borderRadius: "10px"
+    borderRadius: "10px",
+    boxShadow: "0 0 0.5em 0 #1d1515",
+
 }
 function Albums({ xiangCe }) {
     const theme = useTheme();
@@ -47,7 +51,7 @@ function Albums({ xiangCe }) {
                 </Button>
             </Stack>
             <Box sx={{ width: matches ? 1000 : 300, height: matches ? 450 : 200, overflowY: 'scroll' }}>
-                <ImageList variant="masonry" cols={matches ? 3 : 2} gap={8}>
+                <ImageList variant="masonry" cols={matches ? 3 : 2} gap={20}>
                     {xiangCe.gallery.map((item, index) => (
                         <ImageListItem key={index}>
                             <img
@@ -69,8 +73,10 @@ function Albums({ xiangCe }) {
 function Album() {
     return (
         <div>
+            {console.log("相册")}
             <div>
                 {Date.xiangCe.map((item, index) => {
+                    // { console.log(item) }
                     return (
                         <Albums key={index} xiangCe={Date.xiangCe[index]} />
                     )

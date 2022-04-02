@@ -31,7 +31,7 @@ function Course({ time, title, content }) {
                 <TimelineConnector />
                 <TimelineDot>
                     {/* <FastfoodIcon /> */}
-                    <FavoriteIcon color="error"/>
+                    <FavoriteIcon color="error" />
                 </TimelineDot>
                 <TimelineConnector />
             </TimelineSeparator>
@@ -58,11 +58,17 @@ function Course({ time, title, content }) {
 function Main() {
     return (
         <Timeline position="alternate">
-            <Course
-                time={Date.shiGuang[0].time}
-                title={Date.shiGuang[0].title}
-                content={Date.shiGuang[0].content}
-            />
+            {console.log("历程")}
+            {Date.shiGuang.map((item, index) => {
+                return (
+                    <Course key={index}
+                        time={item.time}
+                        title={item.title}
+                        content={item.content}
+                    />
+                )
+            })}
+
         </Timeline>
     );
 }
